@@ -1,0 +1,25 @@
+.aside {
+  width: 300px;
+  &__container {
+    padding: 30px;
+    border-right: 1px solid gainsboro;
+    height: 100vh;
+    &__list {
+      &__link {
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 20px;
+        width: 200px;
+        > a {
+          span {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.active {
+  background: #134e7040;
+}
