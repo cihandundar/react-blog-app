@@ -6,10 +6,7 @@
     height: 100vh;
     &__list {
       &__link {
-        padding: 10px;
-        border-radius: 8px;
-        margin-top: 20px;
-        width: 200px;
+        margin-top: 30px;
         > a {
           span {
             margin-right: 10px;
@@ -21,5 +18,7 @@
 }
 
 .active {
+  padding: 10px 30px;
+  border-radius: 8px;
   background: #134e7040;
 }

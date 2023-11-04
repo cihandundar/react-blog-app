@@ -1,16 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../../assets/logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FiUsers } from "react-icons/fi";
 import { BiMessageDetail } from "react-icons/bi";
 
 const Aside = () => {
-  const [selectedLink, setSelectedLink] = useState("dashboard");
-
-  const handleLinkClick = (link) => {
-    setSelectedLink(link);
-  };
-
   return (
     <aside className="aside">
       <div className="aside__container">
@@ -18,29 +12,21 @@ const Aside = () => {
           <img src={Logo} alt="" />
         </div>
         <ul className="aside__container__list">
-          <li
-            className={`aside__container__list__link ${
-              selectedLink === "users" ? "active" : ""
-            }`}
-          >
-            <Link to="/" onClick={() => handleLinkClick("users")}>
+          <li className="aside__container__list__link">
+            <NavLink to="/" exact activeClassName="active">
               <span>
                 <FiUsers />
               </span>
               Users
-            </Link>
+            </NavLink>
           </li>
-          <li
-            className={`aside__container__list__link ${
-              selectedLink === "posts" ? "active" : ""
-            }`}
-          >
-            <Link to="/post" onClick={() => handleLinkClick("posts")}>
+          <li className="aside__container__list__link">
+            <NavLink to="/post" activeClassName="active">
               <span>
                 <BiMessageDetail />
               </span>
               Posts
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </div>
