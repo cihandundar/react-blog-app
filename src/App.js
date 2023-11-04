@@ -1,5 +1,5 @@
 import { Aside } from "./components";
-import { Posts, Users } from "./pages";
+import { Posts, PostsEdit, Users } from "./pages";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -10,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Users />} />
           <Route path="/post" element={<Posts />} />
+          <Route path="/post/post-edit/:id" element={<PostsEdit />} />
         </Routes>
       </main>
     </BrowserRouter>
