@@ -1,3 +1,4 @@
 import Users from "./Users";
 import Posts from "./Posts";
-export { Users, Posts };
+import PostsEdit from "./PostsEdit";
+export { Users, Posts, PostsEdit };
