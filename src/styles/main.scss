@@ -18,4 +18,8 @@ a {
 
 main {
   display: flex;
+  @include breakpoint(xs) {
+    flex-direction: column;
+    align-items: center;
+  }
 }

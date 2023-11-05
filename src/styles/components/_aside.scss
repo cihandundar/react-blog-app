@@ -4,6 +4,11 @@
     padding: 30px;
     border-right: 1px solid gainsboro;
     height: 100vh;
+    @include breakpoint(xs) {
+      height: 200px;
+      border-right: none;
+      text-align: center;
+    }
     &__list {
       &__link {
         margin-top: 20px;

@@ -6,12 +6,19 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    &__title {
+      @include breakpoint(xs) {
+        text-align: center;
+      }
+    }
   }
   &__card {
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    @include breakpoint(xs) {
+      justify-content: center;
+    }
     &__item {
       cursor: pointer;
       margin: 10px;
