@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteUser } from "redux/userSlice";
@@ -6,6 +6,8 @@ import { deleteUser } from "redux/userSlice";
 const Posts = () => {
   const dispatch = useDispatch();
   const dummy = useSelector((state) => state?.users?.dummy);
+
+  const [selectedUserId, setSelectedUserId] = useState(null);
 
   const handleRemoveUser = (id) => {
     dispatch(deleteUser({ id }));
@@ -28,13 +30,24 @@ const Posts = () => {
                   <p>{card.desc}</p>
                 </div>
               </div>
-              <div className="post__container__item__btn">
-                <Link to={`post-edit/${card.id}`}>
-                  <button>Edit</button>
-                </Link>
-                <button onClick={() => handleRemoveUser(card.id)}>
-                  Delete
-                </button>
+              <div>
+                {selectedUserId === card.id ? (
+                  <div className="settings">
+                    <Link to={`post-edit/${card.id}`}>
+                      <button>Edit</button>
+                    </Link>
+                    <button onClick={() => handleRemoveUser(card.id)}>
+                      Delete
+                    </button>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => setSelectedUserId(card.id)}
+                    className="settings-button"
+                  >
+                    Settings
+                  </button>
+                )}
               </div>
             </div>
           ))}
