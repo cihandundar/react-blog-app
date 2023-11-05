@@ -49,7 +49,17 @@ const PostsEdit = () => {
             onChange={(e) => setValues({ ...values, desc: e.target.value })}
           />
         </div>
-        <button onClick={handleEditUser}>Edit</button>
+        <button
+          style={{
+            width: "100px",
+            height: "35px",
+            backgroundColor: "#134e7040",
+            marginTop: "10px",
+          }}
+          onClick={handleEditUser}
+        >
+          Edit
+        </button>
       </div>
     </div>
   );

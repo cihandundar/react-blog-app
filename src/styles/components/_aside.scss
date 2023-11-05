@@ -10,6 +10,11 @@
       text-align: center;
     }
     &__list {
+      @include breakpoint(xs) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
       &__link {
         margin-top: 20px;
         width: 200px;
