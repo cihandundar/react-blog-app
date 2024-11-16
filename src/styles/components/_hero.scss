@@ -1,0 +1,29 @@
+.hero {
+  background-color: black;
+  padding: 100px;
+  color: white;
+  display: flex;
+  text-align: center;
+
+  @include breakpoint(md) {
+    padding: 50px;
+  }
+
+  &__title {
+    font-size: 56px;
+  }
+
+  &__desc {
+    margin: 22px 0 42px 0;
+    padding: 0 100px;
+    @include breakpoint(lg) {
+      padding: 0px;
+    }
+  }
+
+  a {
+    padding: 10px 30px;
+    background-color: orangered;
+    color: white;
+  }
+}
