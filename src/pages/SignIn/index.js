@@ -52,8 +52,7 @@ const SignIn = () => {
       {isLoading ? (
         <p className="loading">Loading...</p>
       ) : (
-        <div className="register__container">
-          <div className="left"></div>
+        <div className="container">
           <div className="right">
             <div>
               <h1>Sign In</h1>
@@ -82,10 +81,7 @@ const SignIn = () => {
                     onChange={onChange}
                   />
                 </div>
-
-                <div className="form__group">
-                  <button type="submit">Sign in</button>
-                </div>
+                <button type="submit">Sign in</button>
               </form>
             </div>
           </div>

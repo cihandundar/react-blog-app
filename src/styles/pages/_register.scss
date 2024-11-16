@@ -1,0 +1,51 @@
+.register {
+  background-image: url(../../assets/background.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  padding: 100px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-transform: uppercase;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  &__group {
+    > input {
+      width: 300px;
+      height: 45px;
+      padding-left: 10px;
+      background-color: transparent;
+      border: 1px solid gray;
+      color: white;
+
+      &::placeholder {
+        color: white;
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    height: 45px;
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+  }
+}
