@@ -1,12 +1,11 @@
 $breakpoints: (
-  "xxs": 22em,
-  "xss": 25.938em,
-  "xs": 36em,
-  "sm": 48em,
-  "md": 62em,
-  "lg": 75em,
-  "l": 67.75em,
-  "xl": 87.5em,
+  "xxs": 390px,
+  "xs": 425px,
+  "sm": 560px,
+  "md": 768px,
+  "lg": 1024px,
+  "l": 1200px,
+  "xl": 1440px,
 ) !default;
 
 @mixin breakpoint($breakpoint) {
