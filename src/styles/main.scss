@@ -20,3 +20,10 @@ a {
   max-width: 1320px;
   margin: 0 auto;
 }
+
+.row {
+  display: flex;
+  @include breakpoint(md) {
+    flex-wrap: wrap;
+  }
+}

@@ -1,4 +1,4 @@
-import { BlogItem, Hero } from "components";
+import { BlogItem, BlogList, Hero } from "components";
 import React from "react";
 
 const Home = () => {
@@ -8,6 +8,7 @@ const Home = () => {
       <div className="container">
         <div className="row">
           <BlogItem />
+          <BlogList />
         </div>
       </div>
     </section>

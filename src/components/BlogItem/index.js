@@ -35,7 +35,7 @@ const BlogItem = () => {
   const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
 
   return (
-    <div>
+    <div className="blogitem">
       <div className="filters">
         {["All", "Startups", "Security", "AI", "Tech"].map((category) => (
           <button
@@ -58,7 +58,6 @@ const BlogItem = () => {
               {items?.author}
             </div>
             <div className="date">Published: {items?.published_date}</div>
-            <span>{items.category}</span>
           </Link>
         ))}
       </div>
