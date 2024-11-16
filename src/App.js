@@ -1,5 +1,13 @@
 import { Footer, Navbar } from "components";
-import { NotFoundError, SignIn, SignUp } from "./pages";
+import {
+  About,
+  Blogs,
+  Contact,
+  NotFoundError,
+  Services,
+  SignIn,
+  SignUp,
+} from "./pages";
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -26,6 +34,22 @@ function App() {
         {
           path: "/",
           element: <Home />,
+        },
+        {
+          path: "/services",
+          element: <Services />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/blogs",
+          element: <Blogs />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
         },
       ],
     },

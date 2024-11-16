@@ -44,22 +44,22 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" onClick={showNavbar}>
+                  <NavLink to="/services" onClick={showNavbar}>
                     Services
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" onClick={showNavbar}>
+                  <NavLink to="/about" onClick={showNavbar}>
                     About
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" onClick={showNavbar}>
+                  <NavLink to="/blogs" onClick={showNavbar}>
                     Blogs
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink to="/" onClick={showNavbar}>
+                  <NavLink to="/contact" onClick={showNavbar}>
                     Contact
                   </NavLink>
                 </li>
