@@ -15,6 +15,7 @@ header {
 
 nav ul {
   display: flex;
+  align-items: center;
   gap: 30px;
 }
 
@@ -30,5 +31,13 @@ nav ul li a {
 .btn a {
   padding: 10px 30px;
   background-color: orangered;
+  border: 1px solid orangered;
   color: white;
+}
+
+.logout {
+  padding: 10px 30px;
+  background-color: orangered;
+  color: white;
+  border: 1px solid orangered;
 }
