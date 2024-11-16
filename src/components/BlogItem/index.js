@@ -6,24 +6,48 @@ import { Link } from "react-router-dom";
 
 const BlogItem = () => {
   const blogs = useSelector((state) => state?.blogs?.item || []);
-
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(9);
+  const [filteredBlogs, setFilteredBlogs] = useState(blogs);
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   useEffect(() => {
     dispatch(fetchBlog());
   }, [dispatch]);
 
+  useEffect(() => {
+    if (selectedCategory === "All") {
+      setFilteredBlogs(blogs);
+    } else {
+      setFilteredBlogs(
+        blogs.filter((blog) => blog.category === selectedCategory)
+      );
+    }
+  }, [selectedCategory, blogs]);
+
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = filteredBlogs.slice(indexOfFirstPost, indexOfLastPost);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  const totalPages = Math.ceil(blogs.length / postsPerPage);
+  const totalPages = Math.ceil(filteredBlogs.length / postsPerPage);
 
   return (
     <div>
+      <div className="filters">
+        {["All", "Startups", "Security", "AI", "Tech"].map((category) => (
+          <button
+            key={category}
+            onClick={() => setSelectedCategory(category)}
+            className={category === selectedCategory ? "active" : ""}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
       <div className="blogs">
         {currentPosts.map((items) => (
           <Link href="#" className="card" key={items.id}>
@@ -38,6 +62,7 @@ const BlogItem = () => {
           </Link>
         ))}
       </div>
+
       <div className="pagination">
         {Array.from({ length: totalPages }, (_, index) => (
           <button
