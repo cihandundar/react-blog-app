@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { FaArrowRight } from "react-icons/fa";
 const Hero = () => {
   return (
     <div className="hero">
@@ -14,7 +14,9 @@ const Hero = () => {
           intriguing articles, there's something here for everyone. Let's start
           exploring!
         </div>
-        <Link to="/">Learn More</Link>
+        <Link to="/">
+          Learn More <FaArrowRight />
+        </Link>
       </div>
     </div>
   );

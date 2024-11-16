@@ -2,7 +2,7 @@
   background-color: black;
   padding: 100px;
   color: white;
-  display: flex;
+  align-items: center;
   text-align: center;
 
   @include breakpoint(md) {
@@ -25,5 +25,8 @@
     padding: 10px 30px;
     background-color: orangered;
     color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
   }
 }
