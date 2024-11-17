@@ -63,6 +63,7 @@ const BlogItem = () => {
       </div>
 
       <div className="pagination">
+        Previous
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index + 1}
@@ -72,6 +73,7 @@ const BlogItem = () => {
             {index + 1}
           </button>
         ))}
+        Next
       </div>
     </div>
   );
