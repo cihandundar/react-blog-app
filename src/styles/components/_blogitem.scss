@@ -91,3 +91,22 @@
   text-decoration: underline;
   color: orangered;
 }
+
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  > form {
+    display: flex;
+    align-items: center;
+    > input {
+      min-width: 300px;
+      padding: 10px;
+      outline: none;
+    }
+    > button {
+      padding: 10px;
+      cursor: pointer;
+    }
+  }
+}
