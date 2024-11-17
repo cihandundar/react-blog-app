@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, reset } from "../../features/auth/authSlice";
@@ -10,12 +10,12 @@ const Navbar = () => {
 
   const user = useSelector((state) => state.auth);
   const navRef = useRef();
+  const headerRef = useRef();
 
-  // State to track whether the menu is open or closed
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const showNavbar = () => {
-    setIsMenuOpen(!isMenuOpen); // Toggle the state
+    setIsMenuOpen(!isMenuOpen);
     navRef.current.classList.toggle("menu");
   };
 
@@ -25,8 +25,24 @@ const Navbar = () => {
     navigate("/signin");
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        headerRef.current.classList.add("shadow");
+      } else {
+        headerRef.current.classList.remove("shadow");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header>
+    <header ref={headerRef}>
       <div className="container mobile">
         <Link to="/" className="mobileLogo">
           22 BLOG
@@ -77,7 +93,6 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        {/* Conditionally render the icons based on the menu state */}
         <button className="hamburger" onClick={showNavbar}>
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>

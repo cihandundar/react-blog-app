@@ -1,6 +1,9 @@
 header {
   padding: 20px 0;
   background-color: black;
+  position: sticky;
+  top: 0;
+  transition: box-shadow 0.3s ease-in-out;
 }
 .logo {
   font-size: 32px;
@@ -108,4 +111,8 @@ nav ul li a {
   @include breakpoint(md) {
     display: block;
   }
+}
+
+header.shadow {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
 }
